@@ -70,6 +70,7 @@ class User {
     }
 
     const existingUserWithEmail = await User.fetchUserByEmail(email);
+    console.log(existingUserWithEmail)
     if (existingUserWithEmail) {
       throw new BadRequestError(`Duplicate email: ${email}`);
     }
@@ -107,6 +108,7 @@ class User {
     ]);
 
     const user = result.rows[0];
+    console.log(user)
     return user;
   }
 }
